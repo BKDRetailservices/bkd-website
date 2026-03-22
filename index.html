@@ -1,0 +1,1253 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>BKD Retail Services — AI-Powered Commerce Consulting</title>
+<meta name="description" content="BKD Retail Services helps enterprises deploy AI automation, agentic workflows, and intelligent commerce systems that deliver measurable outcomes.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;0,9..40,600;0,9..40,700;1,9..40,400&family=JetBrains+Mono:wght@400;500&family=Playfair+Display:wght@600;700&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --bg: #0B0F1A;
+    --bg-card: #111827;
+    --bg-card-hover: #1a2235;
+    --surface: #1E293B;
+    --border: #1e2d42;
+    --border-accent: #2563EB;
+    --text: #E2E8F0;
+    --text-muted: #94A3B8;
+    --text-dim: #64748B;
+    --accent: #3B82F6;
+    --accent-bright: #60A5FA;
+    --accent-glow: rgba(59, 130, 246, 0.15);
+    --green: #34D399;
+    --green-dim: rgba(52, 211, 153, 0.12);
+    --amber: #FBBF24;
+    --amber-dim: rgba(251, 191, 36, 0.12);
+    --coral: #F87171;
+    --coral-dim: rgba(248, 113, 113, 0.12);
+    --font-body: 'DM Sans', -apple-system, sans-serif;
+    --font-display: 'Playfair Display', Georgia, serif;
+    --font-mono: 'JetBrains Mono', monospace;
+  }
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  html { scroll-behavior: smooth; }
+
+  body {
+    font-family: var(--font-body);
+    background: var(--bg);
+    color: var(--text);
+    line-height: 1.6;
+    -webkit-font-smoothing: antialiased;
+    overflow-x: hidden;
+  }
+
+  /* ── NAV ── */
+  nav {
+    position: fixed;
+    top: 0; left: 0; right: 0;
+    z-index: 100;
+    padding: 1rem 2rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: rgba(11, 15, 26, 0.85);
+    backdrop-filter: blur(20px);
+    border-bottom: 1px solid var(--border);
+    transition: all 0.3s ease;
+  }
+
+  .nav-logo {
+    font-family: var(--font-body);
+    font-weight: 700;
+    font-size: 1.1rem;
+    letter-spacing: -0.02em;
+    color: var(--text);
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+    gap: 0.6rem;
+  }
+
+  .nav-logo .logo-mark {
+    width: 32px;
+    height: 32px;
+    background: linear-gradient(135deg, var(--accent), #818CF8);
+    border-radius: 8px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 700;
+    font-size: 0.75rem;
+    color: white;
+    letter-spacing: 0.05em;
+  }
+
+  .nav-links {
+    display: flex;
+    gap: 2rem;
+    align-items: center;
+    list-style: none;
+  }
+
+  .nav-links a {
+    color: var(--text-muted);
+    text-decoration: none;
+    font-size: 0.875rem;
+    font-weight: 500;
+    transition: color 0.2s;
+  }
+
+  .nav-links a:hover { color: var(--text); }
+
+  .nav-cta {
+    background: var(--accent) !important;
+    color: white !important;
+    padding: 0.5rem 1.25rem;
+    border-radius: 8px;
+    font-size: 0.875rem;
+    font-weight: 600;
+    transition: all 0.2s;
+  }
+
+  .nav-cta:hover {
+    background: #2563EB !important;
+    transform: translateY(-1px);
+  }
+
+  /* ── HERO ── */
+  .hero {
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 8rem 2rem 6rem;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .hero::before {
+    content: '';
+    position: absolute;
+    top: -200px;
+    right: -200px;
+    width: 800px;
+    height: 800px;
+    background: radial-gradient(circle, rgba(59,130,246,0.08) 0%, transparent 70%);
+    pointer-events: none;
+  }
+
+  .hero::after {
+    content: '';
+    position: absolute;
+    bottom: -100px;
+    left: -100px;
+    width: 500px;
+    height: 500px;
+    background: radial-gradient(circle, rgba(129,140,248,0.06) 0%, transparent 70%);
+    pointer-events: none;
+  }
+
+  .hero-grid {
+    position: absolute;
+    inset: 0;
+    background-image:
+      linear-gradient(rgba(59,130,246,0.03) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(59,130,246,0.03) 1px, transparent 1px);
+    background-size: 60px 60px;
+    mask-image: radial-gradient(ellipse 80% 60% at 50% 40%, black 20%, transparent 100%);
+    pointer-events: none;
+  }
+
+  .hero-inner {
+    max-width: 900px;
+    text-align: center;
+    position: relative;
+    z-index: 1;
+  }
+
+  .hero-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 0.4rem 1rem;
+    border-radius: 100px;
+    border: 1px solid var(--border);
+    background: var(--bg-card);
+    color: var(--text-muted);
+    font-size: 0.8rem;
+    font-weight: 500;
+    margin-bottom: 2rem;
+    letter-spacing: 0.02em;
+  }
+
+  .hero-badge .pulse {
+    width: 6px;
+    height: 6px;
+    border-radius: 50%;
+    background: var(--green);
+    animation: pulse 2s ease-in-out infinite;
+  }
+
+  @keyframes pulse {
+    0%, 100% { opacity: 1; box-shadow: 0 0 0 0 rgba(52,211,153,0.4); }
+    50% { opacity: 0.8; box-shadow: 0 0 0 6px rgba(52,211,153,0); }
+  }
+
+  .hero h1 {
+    font-family: var(--font-display);
+    font-size: clamp(2.5rem, 6vw, 4.5rem);
+    font-weight: 700;
+    line-height: 1.1;
+    letter-spacing: -0.03em;
+    margin-bottom: 1.5rem;
+    color: white;
+  }
+
+  .hero h1 .gradient-text {
+    background: linear-gradient(135deg, var(--accent-bright), #A78BFA, var(--accent));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+
+  .hero p {
+    font-size: 1.2rem;
+    color: var(--text-muted);
+    max-width: 640px;
+    margin: 0 auto 2.5rem;
+    line-height: 1.7;
+  }
+
+  .hero-actions {
+    display: flex;
+    gap: 1rem;
+    justify-content: center;
+    flex-wrap: wrap;
+  }
+
+  .btn-primary {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 0.85rem 2rem;
+    background: var(--accent);
+    color: white;
+    border: none;
+    border-radius: 10px;
+    font-size: 1rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.25s;
+    text-decoration: none;
+    font-family: var(--font-body);
+  }
+
+  .btn-primary:hover {
+    background: #2563EB;
+    transform: translateY(-2px);
+    box-shadow: 0 8px 30px rgba(59,130,246,0.3);
+  }
+
+  .btn-secondary {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 0.85rem 2rem;
+    background: transparent;
+    color: var(--text);
+    border: 1px solid var(--border);
+    border-radius: 10px;
+    font-size: 1rem;
+    font-weight: 500;
+    cursor: pointer;
+    transition: all 0.25s;
+    text-decoration: none;
+    font-family: var(--font-body);
+  }
+
+  .btn-secondary:hover {
+    border-color: var(--text-muted);
+    background: var(--bg-card);
+  }
+
+  /* ── TRUST BAR ── */
+  .trust-bar {
+    padding: 3rem 2rem;
+    border-top: 1px solid var(--border);
+    border-bottom: 1px solid var(--border);
+    text-align: center;
+  }
+
+  .trust-bar p {
+    color: var(--text-dim);
+    font-size: 0.8rem;
+    text-transform: uppercase;
+    letter-spacing: 0.12em;
+    font-weight: 500;
+    margin-bottom: 1.5rem;
+  }
+
+  .trust-logos {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 3rem;
+    flex-wrap: wrap;
+    opacity: 0.5;
+  }
+
+  .trust-logo {
+    font-family: var(--font-body);
+    font-weight: 600;
+    font-size: 1rem;
+    color: var(--text-muted);
+    letter-spacing: 0.02em;
+  }
+
+  /* ── SECTIONS ── */
+  section {
+    padding: 6rem 2rem;
+  }
+
+  .section-container {
+    max-width: 1100px;
+    margin: 0 auto;
+  }
+
+  .section-label {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.4rem;
+    font-family: var(--font-mono);
+    font-size: 0.75rem;
+    font-weight: 500;
+    color: var(--accent-bright);
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    margin-bottom: 1rem;
+  }
+
+  .section-label::before {
+    content: '';
+    width: 20px;
+    height: 1px;
+    background: var(--accent);
+  }
+
+  .section-title {
+    font-family: var(--font-display);
+    font-size: clamp(2rem, 4vw, 3rem);
+    font-weight: 700;
+    color: white;
+    line-height: 1.15;
+    letter-spacing: -0.02em;
+    margin-bottom: 1rem;
+  }
+
+  .section-subtitle {
+    font-size: 1.1rem;
+    color: var(--text-muted);
+    max-width: 600px;
+    line-height: 1.6;
+    margin-bottom: 3rem;
+  }
+
+  /* ── SERVICES ── */
+  .services-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    gap: 1.5rem;
+    margin-top: 3rem;
+  }
+
+  .service-card {
+    background: var(--bg-card);
+    border: 1px solid var(--border);
+    border-radius: 16px;
+    padding: 2rem;
+    transition: all 0.3s ease;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .service-card:hover {
+    border-color: var(--border-accent);
+    background: var(--bg-card-hover);
+    transform: translateY(-4px);
+    box-shadow: 0 20px 60px rgba(0,0,0,0.3);
+  }
+
+  .service-card.featured {
+    border-color: rgba(59,130,246,0.3);
+    background: linear-gradient(135deg, rgba(59,130,246,0.05), var(--bg-card));
+  }
+
+  .service-card.featured::before {
+    content: 'Core Focus';
+    position: absolute;
+    top: 1rem;
+    right: 1rem;
+    font-size: 0.65rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    color: var(--accent-bright);
+    background: var(--accent-glow);
+    padding: 0.25rem 0.75rem;
+    border-radius: 100px;
+    border: 1px solid rgba(59,130,246,0.2);
+  }
+
+  .service-icon {
+    width: 48px;
+    height: 48px;
+    border-radius: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.3rem;
+    margin-bottom: 1.25rem;
+  }
+
+  .service-card:nth-child(1) .service-icon {
+    background: var(--accent-glow);
+    border: 1px solid rgba(59,130,246,0.15);
+  }
+
+  .service-card:nth-child(2) .service-icon {
+    background: var(--green-dim);
+    border: 1px solid rgba(52,211,153,0.15);
+  }
+
+  .service-card:nth-child(3) .service-icon {
+    background: var(--amber-dim);
+    border: 1px solid rgba(251,191,36,0.15);
+  }
+
+  .service-card h3 {
+    font-size: 1.2rem;
+    font-weight: 600;
+    margin-bottom: 0.75rem;
+    color: white;
+  }
+
+  .service-card p {
+    color: var(--text-muted);
+    font-size: 0.95rem;
+    line-height: 1.6;
+    margin-bottom: 1.25rem;
+  }
+
+  .service-tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+  }
+
+  .service-tag {
+    font-family: var(--font-mono);
+    font-size: 0.7rem;
+    padding: 0.2rem 0.6rem;
+    border-radius: 6px;
+    background: var(--surface);
+    color: var(--text-dim);
+    border: 1px solid var(--border);
+  }
+
+  /* ── HOW WE WORK ── */
+  .process-steps {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 1px;
+    background: var(--border);
+    border-radius: 16px;
+    overflow: hidden;
+    margin-top: 3rem;
+  }
+
+  .process-step {
+    background: var(--bg-card);
+    padding: 2rem 1.5rem;
+    position: relative;
+  }
+
+  .process-step:first-child { border-radius: 16px 0 0 16px; }
+  .process-step:last-child { border-radius: 0 16px 16px 0; }
+
+  .step-number {
+    font-family: var(--font-mono);
+    font-size: 0.7rem;
+    font-weight: 500;
+    color: var(--accent-bright);
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    margin-bottom: 1rem;
+  }
+
+  .process-step h4 {
+    font-size: 1.05rem;
+    font-weight: 600;
+    color: white;
+    margin-bottom: 0.5rem;
+  }
+
+  .process-step p {
+    font-size: 0.85rem;
+    color: var(--text-muted);
+    line-height: 1.5;
+  }
+
+  /* ── RESULTS ── */
+  .results-section {
+    background: linear-gradient(180deg, var(--bg) 0%, rgba(30,41,59,0.3) 50%, var(--bg) 100%);
+  }
+
+  .results-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 1.5rem;
+    margin-top: 3rem;
+  }
+
+  .result-card {
+    background: var(--bg-card);
+    border: 1px solid var(--border);
+    border-radius: 16px;
+    padding: 2rem;
+  }
+
+  .result-card .result-label {
+    font-family: var(--font-mono);
+    font-size: 0.7rem;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    color: var(--text-dim);
+    margin-bottom: 0.5rem;
+  }
+
+  .result-card .result-vertical {
+    font-size: 0.85rem;
+    font-weight: 600;
+    color: var(--accent-bright);
+    margin-bottom: 1rem;
+    display: flex;
+    align-items: center;
+    gap: 0.4rem;
+  }
+
+  .result-card .result-stat {
+    font-family: var(--font-display);
+    font-size: 2.5rem;
+    font-weight: 700;
+    color: white;
+    line-height: 1;
+    margin-bottom: 0.5rem;
+  }
+
+  .result-card .result-context {
+    font-size: 0.9rem;
+    color: var(--text-muted);
+    line-height: 1.5;
+    margin-bottom: 1.25rem;
+  }
+
+  .result-card .result-detail {
+    font-size: 0.8rem;
+    color: var(--text-dim);
+    padding-top: 1rem;
+    border-top: 1px solid var(--border);
+    line-height: 1.5;
+  }
+
+  /* ── TECH STACK ── */
+  .stack-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(140px, 1fr));
+    gap: 0.75rem;
+    margin-top: 2rem;
+  }
+
+  .stack-item {
+    background: var(--bg-card);
+    border: 1px solid var(--border);
+    border-radius: 10px;
+    padding: 1rem;
+    text-align: center;
+    transition: all 0.2s;
+  }
+
+  .stack-item:hover {
+    border-color: var(--border-accent);
+    transform: translateY(-2px);
+  }
+
+  .stack-item .stack-name {
+    font-size: 0.85rem;
+    font-weight: 500;
+    color: var(--text);
+  }
+
+  .stack-item .stack-type {
+    font-size: 0.7rem;
+    color: var(--text-dim);
+    margin-top: 0.25rem;
+  }
+
+  /* ── ABOUT ── */
+  .about-layout {
+    display: grid;
+    grid-template-columns: 1fr 1.2fr;
+    gap: 4rem;
+    align-items: start;
+    margin-top: 3rem;
+  }
+
+  .about-content p {
+    color: var(--text-muted);
+    font-size: 1rem;
+    line-height: 1.7;
+    margin-bottom: 1.25rem;
+  }
+
+  .about-stats {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1rem;
+    margin-top: 2rem;
+  }
+
+  .about-stat {
+    background: var(--bg-card);
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    padding: 1.25rem;
+  }
+
+  .about-stat .stat-value {
+    font-family: var(--font-display);
+    font-size: 1.8rem;
+    font-weight: 700;
+    color: white;
+    line-height: 1;
+    margin-bottom: 0.25rem;
+  }
+
+  .about-stat .stat-label {
+    font-size: 0.8rem;
+    color: var(--text-dim);
+  }
+
+  .credentials {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+  }
+
+  .credential-item {
+    background: var(--bg-card);
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    padding: 1.25rem 1.5rem;
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+  }
+
+  .credential-icon {
+    width: 40px;
+    height: 40px;
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.1rem;
+    flex-shrink: 0;
+  }
+
+  .credential-item:nth-child(1) .credential-icon {
+    background: var(--accent-glow);
+  }
+  .credential-item:nth-child(2) .credential-icon {
+    background: var(--green-dim);
+  }
+  .credential-item:nth-child(3) .credential-icon {
+    background: var(--amber-dim);
+  }
+  .credential-item:nth-child(4) .credential-icon {
+    background: var(--coral-dim);
+  }
+
+  .credential-text h4 {
+    font-size: 0.9rem;
+    font-weight: 600;
+    color: white;
+    margin-bottom: 0.15rem;
+  }
+
+  .credential-text p {
+    font-size: 0.8rem;
+    color: var(--text-dim);
+  }
+
+  /* ── PRICING ── */
+  .pricing-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 1.5rem;
+    margin-top: 3rem;
+  }
+
+  .pricing-card {
+    background: var(--bg-card);
+    border: 1px solid var(--border);
+    border-radius: 16px;
+    padding: 2rem;
+    position: relative;
+  }
+
+  .pricing-card.popular {
+    border-color: var(--accent);
+    background: linear-gradient(180deg, rgba(59,130,246,0.06) 0%, var(--bg-card) 100%);
+  }
+
+  .pricing-card.popular::before {
+    content: 'Most Popular';
+    position: absolute;
+    top: -0.75rem;
+    left: 50%;
+    transform: translateX(-50%);
+    font-size: 0.7rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.06em;
+    color: white;
+    background: var(--accent);
+    padding: 0.3rem 1rem;
+    border-radius: 100px;
+  }
+
+  .pricing-card h3 {
+    font-size: 1.15rem;
+    font-weight: 600;
+    color: white;
+    margin-bottom: 0.5rem;
+  }
+
+  .pricing-card .pricing-desc {
+    font-size: 0.85rem;
+    color: var(--text-muted);
+    margin-bottom: 1.5rem;
+    line-height: 1.5;
+  }
+
+  .pricing-card .pricing-features {
+    list-style: none;
+    margin-bottom: 1.5rem;
+  }
+
+  .pricing-card .pricing-features li {
+    font-size: 0.85rem;
+    color: var(--text-muted);
+    padding: 0.4rem 0;
+    padding-left: 1.5rem;
+    position: relative;
+  }
+
+  .pricing-card .pricing-features li::before {
+    content: '→';
+    position: absolute;
+    left: 0;
+    color: var(--accent-bright);
+    font-size: 0.8rem;
+  }
+
+  .pricing-card .pricing-model {
+    font-family: var(--font-mono);
+    font-size: 0.75rem;
+    color: var(--text-dim);
+    padding-top: 1rem;
+    border-top: 1px solid var(--border);
+  }
+
+  /* ── CTA ── */
+  .cta-section {
+    text-align: center;
+    padding: 6rem 2rem 4rem;
+    position: relative;
+  }
+
+  .cta-section::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 600px;
+    height: 400px;
+    background: radial-gradient(circle, rgba(59,130,246,0.1) 0%, transparent 70%);
+    pointer-events: none;
+  }
+
+  .cta-section .section-title {
+    max-width: 600px;
+    margin: 0 auto 1rem;
+  }
+
+  .cta-section p {
+    color: var(--text-muted);
+    max-width: 500px;
+    margin: 0 auto 2rem;
+    font-size: 1.05rem;
+  }
+
+  .cta-actions {
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+    flex-wrap: wrap;
+    margin-bottom: 2rem;
+  }
+
+  .cta-contact {
+    display: flex;
+    justify-content: center;
+    gap: 2rem;
+    flex-wrap: wrap;
+    padding-top: 2rem;
+    border-top: 1px solid var(--border);
+    max-width: 500px;
+    margin: 0 auto;
+  }
+
+  .cta-contact a {
+    font-size: 0.85rem;
+    color: var(--text-muted);
+    text-decoration: none;
+    transition: color 0.2s;
+  }
+
+  .cta-contact a:hover { color: var(--accent-bright); }
+
+  /* ── FOOTER ── */
+  footer {
+    padding: 3rem 2rem 2rem;
+    border-top: 1px solid var(--border);
+  }
+
+  .footer-inner {
+    max-width: 1100px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 1rem;
+  }
+
+  .footer-left {
+    font-size: 0.8rem;
+    color: var(--text-dim);
+  }
+
+  .footer-links {
+    display: flex;
+    gap: 1.5rem;
+  }
+
+  .footer-links a {
+    font-size: 0.8rem;
+    color: var(--text-dim);
+    text-decoration: none;
+    transition: color 0.2s;
+  }
+
+  .footer-links a:hover { color: var(--text-muted); }
+
+  /* ── RESPONSIVE ── */
+  @media (max-width: 900px) {
+    .process-steps { grid-template-columns: repeat(2, 1fr); }
+    .process-step:first-child { border-radius: 16px 0 0 0; }
+    .process-step:nth-child(2) { border-radius: 0 16px 0 0; }
+    .process-step:nth-child(3) { border-radius: 0 0 0 16px; }
+    .process-step:last-child { border-radius: 0 0 16px 0; }
+    .about-layout { grid-template-columns: 1fr; gap: 2rem; }
+  }
+
+  @media (max-width: 640px) {
+    nav { padding: 0.75rem 1rem; }
+    .nav-links { display: none; }
+    section { padding: 4rem 1.25rem; }
+    .process-steps { grid-template-columns: 1fr; }
+    .process-step:first-child,
+    .process-step:last-child,
+    .process-step:nth-child(2),
+    .process-step:nth-child(3) { border-radius: 0; }
+    .hero { padding: 7rem 1.25rem 4rem; }
+    .hero-actions { flex-direction: column; align-items: center; }
+    .about-stats { grid-template-columns: 1fr; }
+    .cta-contact { flex-direction: column; align-items: center; }
+  }
+</style>
+</head>
+<body>
+
+<!-- ═══ NAV ═══ -->
+<nav>
+  <a href="#" class="nav-logo">
+    <span class="logo-mark">BKD</span>
+    BKD Retail Services
+  </a>
+  <ul class="nav-links">
+    <li><a href="#services">Services</a></li>
+    <li><a href="#results">Results</a></li>
+    <li><a href="#approach">Approach</a></li>
+    <li><a href="#about">About</a></li>
+    <li><a href="#contact" class="nav-cta">Get in Touch</a></li>
+  </ul>
+</nav>
+
+<!-- ═══ HERO ═══ -->
+<section class="hero">
+  <div class="hero-grid"></div>
+  <div class="hero-inner">
+    <div class="hero-badge">
+      <span class="pulse"></span>
+      Accepting new engagements for Q2 2026
+    </div>
+    <h1>We build <span class="gradient-text">AI systems</span> that run your commerce operations</h1>
+    <p>BKD Retail Services designs and deploys agentic AI, automation pipelines, and intelligent commerce infrastructure for mid-market and enterprise brands. We don't advise from the sidelines — we ship production systems.</p>
+    <div class="hero-actions">
+      <a href="#contact" class="btn-primary">Book a Discovery Call →</a>
+      <a href="#results" class="btn-secondary">See Our Work</a>
+    </div>
+  </div>
+</section>
+
+<!-- ═══ TRUST BAR ═══ -->
+<div class="trust-bar">
+  <p>Trusted technology ecosystem</p>
+  <div class="trust-logos">
+    <span class="trust-logo">Google Cloud</span>
+    <span class="trust-logo">Shopify</span>
+    <span class="trust-logo">Anthropic Claude</span>
+    <span class="trust-logo">BigQuery</span>
+    <span class="trust-logo">Meta</span>
+    <span class="trust-logo">Terraform</span>
+  </div>
+</div>
+
+<!-- ═══ SERVICES ═══ -->
+<section id="services">
+  <div class="section-container">
+    <span class="section-label">What We Build</span>
+    <h2 class="section-title">AI-first commerce infrastructure</h2>
+    <p class="section-subtitle">We specialize in deploying AI systems that automate real business workflows — not proofs of concept that sit on a shelf.</p>
+    <div class="services-grid">
+      <div class="service-card featured">
+        <div class="service-icon">⚡</div>
+        <h3>AI Automation & Agentic Systems</h3>
+        <p>Multi-agent architectures that handle catalog management, pricing automation, customer service, and operational workflows autonomously. Built on production-grade LLM infrastructure with human-in-the-loop oversight.</p>
+        <div class="service-tags">
+          <span class="service-tag">Claude API</span>
+          <span class="service-tag">Multi-Agent</span>
+          <span class="service-tag">MCP</span>
+          <span class="service-tag">RAG</span>
+          <span class="service-tag">GCP</span>
+          <span class="service-tag">Python</span>
+        </div>
+      </div>
+      <div class="service-card">
+        <div class="service-icon">🛒</div>
+        <h3>Digital Commerce Engineering</h3>
+        <p>End-to-end Shopify builds, product feed automation, multi-channel distribution, and custom storefront development. We handle the technical complexity so brands can focus on growth.</p>
+        <div class="service-tags">
+          <span class="service-tag">Shopify</span>
+          <span class="service-tag">GraphQL</span>
+          <span class="service-tag">Product Feeds</span>
+          <span class="service-tag">Liquid</span>
+          <span class="service-tag">Node.js</span>
+        </div>
+      </div>
+      <div class="service-card">
+        <div class="service-icon">📊</div>
+        <h3>Marketing Analytics & Attribution</h3>
+        <p>GA4 implementations, cross-channel attribution modeling, ROAS optimization, and custom reporting dashboards. Data infrastructure that connects marketing spend to actual revenue.</p>
+        <div class="service-tags">
+          <span class="service-tag">GA4</span>
+          <span class="service-tag">GTM</span>
+          <span class="service-tag">BigQuery</span>
+          <span class="service-tag">Ads</span>
+          <span class="service-tag">Looker</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══ RESULTS ═══ -->
+<section id="results" class="results-section">
+  <div class="section-container">
+    <span class="section-label">Client Outcomes</span>
+    <h2 class="section-title">Measurable impact, not slide decks</h2>
+    <p class="section-subtitle">Anonymized results from recent engagements across pharma ecommerce and retail verticals.</p>
+    <div class="results-grid">
+      <div class="result-card">
+        <div class="result-label">Case Study</div>
+        <div class="result-vertical">🏥 Pharma Ecommerce — 4,000+ SKU Catalog</div>
+        <div class="result-stat">3x</div>
+        <div class="result-context">Reduction in catalog management time through AI-powered product data automation, pricing sync, and metafield workflows.</div>
+        <div class="result-detail">Built automated pricing pipelines using GraphQL API, collection-level banner systems, and mobile-optimized product badge architecture on Shopify. Ongoing $200K+/mo revenue platform.</div>
+      </div>
+      <div class="result-card">
+        <div class="result-label">Case Study</div>
+        <div class="result-vertical">📈 Retail Analytics — Cross-Channel Attribution</div>
+        <div class="result-stat">40%</div>
+        <div class="result-context">Improvement in marketing ROAS through GA4 implementation, custom attribution modeling, and automated reporting dashboards.</div>
+        <div class="result-detail">Deployed end-to-end analytics infrastructure including GTM containerization, BigQuery data pipelines, and Looker dashboards connecting ad spend across Google, Meta, and TikTok to actual revenue.</div>
+      </div>
+      <div class="result-card">
+        <div class="result-label">Case Study</div>
+        <div class="result-vertical">🤖 AI Agent Infrastructure — Multi-Agent System</div>
+        <div class="result-stat">24/7</div>
+        <div class="result-context">Autonomous operations via production multi-agent AI system running on GCP, handling coding tasks, QA, research, and content workflows.</div>
+        <div class="result-detail">Architected with LLM orchestration layer, Telegram-based command interface, skill-based task routing, and automated quality assurance. Built to scale across client engagements.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══ HOW WE WORK ═══ -->
+<section id="approach">
+  <div class="section-container">
+    <span class="section-label">Our Process</span>
+    <h2 class="section-title">From discovery to production in weeks, not quarters</h2>
+    <p class="section-subtitle">We move fast because we've done this before. A proven 4-phase engagement model built for rapid deployment.</p>
+    <div class="process-steps">
+      <div class="process-step">
+        <div class="step-number">Phase 01</div>
+        <h4>Discovery & Scoping</h4>
+        <p>Map your current workflows, identify automation opportunities, and define success metrics. Usually 1–2 working sessions.</p>
+      </div>
+      <div class="process-step">
+        <div class="step-number">Phase 02</div>
+        <h4>Architecture & Design</h4>
+        <p>Design the system architecture, select the right AI models and tools, and create a detailed implementation plan with clear milestones.</p>
+      </div>
+      <div class="process-step">
+        <div class="step-number">Phase 03</div>
+        <h4>Build & Deploy</h4>
+        <p>Ship production code in iterative sprints. We build, test, and deploy directly into your environment — not a sandbox.</p>
+      </div>
+      <div class="process-step">
+        <div class="step-number">Phase 04</div>
+        <h4>Optimize & Scale</h4>
+        <p>Monitor performance, refine prompts and pipelines, and expand automation coverage. Retainer or project-based ongoing support.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══ TECH STACK ═══ -->
+<section>
+  <div class="section-container">
+    <span class="section-label">Technology</span>
+    <h2 class="section-title">Built on proven infrastructure</h2>
+    <p class="section-subtitle">We work with enterprise-grade tools across cloud, commerce, AI, and analytics.</p>
+    <div class="stack-grid">
+      <div class="stack-item">
+        <div class="stack-name">Claude API</div>
+        <div class="stack-type">AI / LLM</div>
+      </div>
+      <div class="stack-item">
+        <div class="stack-name">Google Cloud</div>
+        <div class="stack-type">Infrastructure</div>
+      </div>
+      <div class="stack-item">
+        <div class="stack-name">Shopify</div>
+        <div class="stack-type">Commerce</div>
+      </div>
+      <div class="stack-item">
+        <div class="stack-name">BigQuery</div>
+        <div class="stack-type">Data Warehouse</div>
+      </div>
+      <div class="stack-item">
+        <div class="stack-name">Python</div>
+        <div class="stack-type">Backend</div>
+      </div>
+      <div class="stack-item">
+        <div class="stack-name">Terraform</div>
+        <div class="stack-type">IaC</div>
+      </div>
+      <div class="stack-item">
+        <div class="stack-name">GA4 / GTM</div>
+        <div class="stack-type">Analytics</div>
+      </div>
+      <div class="stack-item">
+        <div class="stack-name">Node.js</div>
+        <div class="stack-type">Backend</div>
+      </div>
+      <div class="stack-item">
+        <div class="stack-name">GraphQL</div>
+        <div class="stack-type">API Layer</div>
+      </div>
+      <div class="stack-item">
+        <div class="stack-name">MCP</div>
+        <div class="stack-type">Agent Protocol</div>
+      </div>
+      <div class="stack-item">
+        <div class="stack-name">Meta Ads</div>
+        <div class="stack-type">Paid Media</div>
+      </div>
+      <div class="stack-item">
+        <div class="stack-name">Looker</div>
+        <div class="stack-type">BI / Reporting</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══ ABOUT ═══ -->
+<section id="about">
+  <div class="section-container">
+    <span class="section-label">About BKD</span>
+    <h2 class="section-title">Enterprise experience, startup speed</h2>
+    <div class="about-layout">
+      <div class="about-content">
+        <p>BKD Retail Services is a specialist AI and commerce consultancy founded by a senior technology executive with 15+ years of experience at the intersection of enterprise sales, cloud platforms, and digital commerce.</p>
+        <p>Our founder has held leadership roles at top-tier global technology companies and management consultancies, working with brands across retail, CPG, health, and pharma to design and implement data-driven growth strategies.</p>
+        <p>We started BKD because we saw the gap between enterprise AI strategy (lots of decks, few results) and the teams actually building production systems. We bridge that gap — combining strategic advisory with hands-on engineering to ship AI systems that work.</p>
+        <p>Based in Miami, FL. Working with clients across the US and Europe.</p>
+        <div class="about-stats">
+          <div class="about-stat">
+            <div class="stat-value">15+</div>
+            <div class="stat-label">Years in Enterprise Tech</div>
+          </div>
+          <div class="about-stat">
+            <div class="stat-value">4</div>
+            <div class="stat-label">Verticals Deep</div>
+          </div>
+          <div class="about-stat">
+            <div class="stat-value">$200K+</div>
+            <div class="stat-label">Monthly Client GMV</div>
+          </div>
+          <div class="about-stat">
+            <div class="stat-value">3</div>
+            <div class="stat-label">Cloud Platforms</div>
+          </div>
+        </div>
+      </div>
+      <div class="credentials">
+        <div class="credential-item">
+          <div class="credential-icon">🎓</div>
+          <div class="credential-text">
+            <h4>International MBA</h4>
+            <p>WU Vienna University of Economics & Business</p>
+          </div>
+        </div>
+        <div class="credential-item">
+          <div class="credential-icon">🏛️</div>
+          <div class="credential-text">
+            <h4>Executive Education</h4>
+            <p>Columbia Business School</p>
+          </div>
+        </div>
+        <div class="credential-item">
+          <div class="credential-icon">☁️</div>
+          <div class="credential-text">
+            <h4>Cloud & AI Platform Expertise</h4>
+            <p>GCP, AWS, Azure — multi-cloud delivery</p>
+          </div>
+        </div>
+        <div class="credential-item">
+          <div class="credential-icon">🏢</div>
+          <div class="credential-text">
+            <h4>Enterprise Background</h4>
+            <p>Top-tier tech companies & management consultancies</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══ PRICING ═══ -->
+<section id="pricing">
+  <div class="section-container">
+    <span class="section-label">Engagement Models</span>
+    <h2 class="section-title">Flexible, transparent pricing</h2>
+    <p class="section-subtitle">We structure engagements around outcomes, not hours. Pick the model that fits your team.</p>
+    <div class="pricing-grid">
+      <div class="pricing-card">
+        <h3>Project-Based</h3>
+        <p class="pricing-desc">Fixed-scope engagements with defined deliverables. Best for assessments, audits, and implementation projects.</p>
+        <ul class="pricing-features">
+          <li>Defined scope and milestones</li>
+          <li>Clear deliverables and timeline</li>
+          <li>Ideal for first engagements</li>
+          <li>Typical: $5K–$25K per project</li>
+        </ul>
+        <div class="pricing-model">Scoped per engagement</div>
+      </div>
+      <div class="pricing-card popular">
+        <h3>Monthly Retainer</h3>
+        <p class="pricing-desc">Ongoing strategic and technical support. Best for teams that need a fractional AI/commerce lead.</p>
+        <ul class="pricing-features">
+          <li>Dedicated weekly hours</li>
+          <li>Slack/async access</li>
+          <li>Architecture reviews & builds</li>
+          <li>Priority scheduling</li>
+        </ul>
+        <div class="pricing-model">Starting at $3K/month</div>
+      </div>
+      <div class="pricing-card">
+        <h3>Outcome-Based</h3>
+        <p class="pricing-desc">Performance-aligned pricing tied to measurable results. Best for brands confident in the opportunity.</p>
+        <ul class="pricing-features">
+          <li>Shared risk, shared upside</li>
+          <li>Metrics-driven milestones</li>
+          <li>Revenue or efficiency targets</li>
+          <li>Requires discovery phase first</li>
+        </ul>
+        <div class="pricing-model">Custom structure</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══ CTA ═══ -->
+<section id="contact" class="cta-section">
+  <div class="section-container">
+    <span class="section-label">Let's Talk</span>
+    <h2 class="section-title">Ready to put AI to work in your business?</h2>
+    <p>We start every engagement with a free 30-minute discovery call. No pitch decks — just an honest conversation about what's possible.</p>
+    <div class="cta-actions">
+      <a href="mailto:sales@bkdretailconsulting.net" class="btn-primary">Email Us →</a>
+      <a href="tel:+12017771297" class="btn-secondary">Call (201) 777-1297</a>
+    </div>
+    <div class="cta-contact">
+      <a href="mailto:sales@bkdretailconsulting.net">sales@bkdretailconsulting.net</a>
+      <a href="#">LinkedIn</a>
+      <a href="#">Miami, FL</a>
+    </div>
+  </div>
+</section>
+
+<!-- ═══ FOOTER ═══ -->
+<footer>
+  <div class="footer-inner">
+    <div class="footer-left">
+      © 2026 BKD Retail Services LLC · All rights reserved
+    </div>
+    <div class="footer-links">
+      <a href="#">Privacy Policy</a>
+      <a href="#">Terms & Conditions</a>
+    </div>
+  </div>
+</footer>
+
+</body>
+</html>
